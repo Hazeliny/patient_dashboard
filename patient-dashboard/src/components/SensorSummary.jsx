@@ -5,12 +5,16 @@ export default function SensorSummary({ data }) {
   const {
     temperature,
     heartRate,
-    bloodPressureSystolic,
-    bloodPressureDiastolic,
+//    bloodPressureSystolic,
+//    bloodPressureDiastolic,
+    bloodPressure,
     oxygenSaturation,
     respiratoryRate,
     bloodGlucose,
   } = data
+
+  const bloodPressureSystolic = bloodPressure?.systolic ?? ''
+  const bloodPressureDiastolic = bloodPressure?.diastolic ?? ''
 
   return (
     <div className="p-4 bg-white shadow rounded">
