@@ -12,11 +12,11 @@ export default function Home() {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-2">Patients</h2>
+      <h2 className="text-xl font-semibold mb-2">Patients List</h2>
       <ul className="space-y-2">
         {patients.map(patient => (
           <li key={patient.id} className="border p-3 rounded hover:shadow">
-            <Link to={`/patient/${patient.id}`} className="text-blue-600 hover:underline">
+            <Link to={`/patient/${patient.id}`} className="text-white hover:underline">
               {patient.firstName} {patient.lastName}
             </Link>
           </li>

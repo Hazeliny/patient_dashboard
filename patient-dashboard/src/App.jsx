@@ -6,8 +6,8 @@ import PatientPage from './pages/PatientPage'
 export default function App() {
   return (
     <Router>
-      <div className="p-4 font-sans">
-        <h1 className="text-3xl font-bold mb-4">🏥 Patient Dashboard</h1>
+      <div className="min-h-screen bg-gradient-to-r from-blue-600 via-blue-400 to-blue-200 p-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
+        <h1 className="text-3xl font-bold mb-8 text-center text-grey drop-shadow-lg">🏥 Patient Dashboard</h1>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/patient/:id" element={<PatientPage />} />

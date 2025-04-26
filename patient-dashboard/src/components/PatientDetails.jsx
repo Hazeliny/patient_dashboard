@@ -1,11 +1,16 @@
 // components/PatientDetails.jsx
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+//import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
-export default function PatientDetails() {
-  const { id } = useParams()
+export default function PatientDetails({ patient }) {
+//  const { id } = useParams()
   const navigate = useNavigate()
+
+  if (!patient) {
+    return <div>Patient not found</div>
+  }
+  /*
   const [patient, setPatient] = useState(null)
   const [loading, setLoading] = useState(true)
 
@@ -33,17 +38,11 @@ export default function PatientDetails() {
   if (!patient) {
     return <div>Patient not found</div>
   }
-
+*/
   return (
     <div className="p-4 bg-white shadow rounded">
-      <div className="flex items-center justify-between mb-4">
-        <button
-            onClick={() => navigate(-1)}  // 或 navigate('/patients')
-            className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
-        >
-            ← Back
-        </button>
-        <h2 className="text-2xl font-semibold mb-4">Patient Details</h2>
+      <div className="mb-4">
+        <h3 className="text-2xl font-semibold mb-4 text-center">Patient Details</h3>
       </div>
       
       <div className="space-y-4">
