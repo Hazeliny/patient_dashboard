@@ -1,5 +1,3 @@
-// mock-sensor-server.js
-
 const WebSocket = require('ws');
 
 const wss = new WebSocket.Server({ port: 8080 });
@@ -9,14 +7,14 @@ console.log('Mock sensor WebSocket server is running on ws://localhost:8080');
 // 生成一组随机的传感器数据
 function generateSensorData() {
   return {
-    temperature: (36 + Math.random() * 2).toFixed(1), // 36°C - 38°C
-    heartRate: Math.floor(60 + Math.random() * 40),    // 60 - 100 bpm
+    temperature: (30 + Math.random() * 12).toFixed(1), // 30°C - 42°C
+    heartRate: Math.floor(38 + Math.random() * 83),    // 38 - 120 bpm
     bloodPressure: {
-      systolic: Math.floor(100 + Math.random() * 30),   // 100 - 130 mmHg
-      diastolic: Math.floor(60 + Math.random() * 20),   // 60 - 80 mmHg
+      systolic: Math.floor(70 + Math.random() * 81),   // 70 - 150 mmHg
+      diastolic: Math.floor(50 + Math.random() * 51),   // 50 - 100 mmHg
     },
-    oxygenSaturation: Math.floor(95 + Math.random() * 5), // 95% - 100%
-    respiratoryRate: Math.floor(12 + Math.random() * 8),  // 12 - 20 breaths/min
+    oxygenSaturation: Math.floor(80 + Math.random() * 21), // 80% - 100%
+    respiratoryRate: Math.floor(8 + Math.random() * 18),  // 8 - 25 breaths/min
     bloodGlucose: (Math.floor(Math.random() * 71) + 20) / 10, // 2.0 ≤ x < 9.0 mg/dL
     timestamp: new Date().toISOString(), // 发送一个时间戳（方便前端处理）
   };

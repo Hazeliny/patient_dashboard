@@ -70,3 +70,18 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.p-4 {
+  word-wrap: break-word;  /* 确保长文本能换行 */
+  word-break: break-word; /* 防止长单词不换行 */
+  max-width: 100%;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.space-y-4 {
+  margin-bottom: 10px; /* 控制间隔大小 */
+}

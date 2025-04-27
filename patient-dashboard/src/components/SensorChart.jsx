@@ -122,7 +122,7 @@ export default function SensorChart({ data }) {
                         data: [item.value],
                         backgroundColor: getColor(item.value, item.min, item.max),
                         borderRadius: 8,
-                        barThickness: 30,
+                        barThickness: 26,
                       },
                     ],
                   }
@@ -175,17 +175,18 @@ export default function SensorChart({ data }) {
                     },
                     layout: {
                       padding: {
-                      top: 38, // 为图表区域顶部增加空隙
+                      top: 28, // 为图表区域顶部增加空隙
                       bottom: 0, // 为图表区域底部增加空隙
+                      left: -6,
                       },
                     },
                   }
 
                   return (
-                    <div key={subIndex} className="h-50 w-56" style={{ marginTop: '80px' }}>
+                    <div key={subIndex} className="h-50 w-56" style={{ marginTop: '30px' }}>
                       <Bar data={chartData} options={options} />
                       {/* 下面显示数值 */}
-                      <div className="text-center mt-3 text-sm text-gray-600">
+                      <div className="text-center mt-1 text-sm text-gray-600">
                         {item.value} {card.unit}
                       </div>
                     </div>
@@ -204,7 +205,7 @@ export default function SensorChart({ data }) {
                 data: [card.value],
                 backgroundColor: getColor(card.value, card.min, card.max),
                 borderRadius: 8,
-                barThickness: 30,
+                barThickness: 26,
               },
             ],
           }
@@ -259,6 +260,7 @@ export default function SensorChart({ data }) {
               padding: {
                 top: 0, // 为图表区域顶部增加空隙
                 bottom: 0, // 为图表区域底部增加空隙
+                left: -6,
               },
             },
           }
@@ -283,7 +285,7 @@ export default function SensorChart({ data }) {
                 </div>
               </div>
 
-              <div className="h-50 w-30" style={{ marginTop: '200px' }}>
+              <div className="h-50 w-30" style={{ marginTop: '120px' }}>
                 <Bar data={chartData} options={options} />
               </div>
 

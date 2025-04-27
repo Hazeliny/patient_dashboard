@@ -1,46 +1,16 @@
-// components/PatientDetails.jsx
-import React, { useEffect, useState } from 'react'
-//import { useParams } from 'react-router-dom'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function PatientDetails({ patient }) {
-//  const { id } = useParams()
   const navigate = useNavigate()
 
   if (!patient) {
     return <div>Patient not found</div>
   }
-  /*
-  const [patient, setPatient] = useState(null)
-  const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    const fetchPatientDetails = async () => {
-      try {
-        const res = await fetch(`https://dummyjson.com/users/${id}`)
-        const data = await res.json()
-        setPatient(data)
-      } catch (error) {
-        console.error('Error fetching patient data:', error)
-      } finally {
-        setLoading(false)
-      }
-    }
-  
-    fetchPatientDetails()
-  }, [id])
-  
-
-  if (loading) {
-    return <div>Loading...</div>
-  }
-
-  if (!patient) {
-    return <div>Patient not found</div>
-  }
-*/
   return (
     <div className="p-4 bg-white shadow rounded">
+      <div className="flex-1">
       <div className="mb-4">
         <h3 className="text-2xl font-semibold mb-4 text-center">Patient Details</h3>
       </div>
@@ -98,6 +68,7 @@ export default function PatientDetails({ patient }) {
           <h3 className="text-xl font-medium">Hair Color</h3>
           <p>{patient.hair?.color} - {patient.hair?.type}</p>
         </div>
+      </div>
       </div>
     </div>
   )
