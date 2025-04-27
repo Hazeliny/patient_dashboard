@@ -32,7 +32,7 @@ export default function PatientPage() {
           })
           .catch(err => console.error('Failed to get static sensors data:', err))
     } else if (dataSource === 'realtime') {
-      socket = new WebSocket('ws://localhost:8080'); // connect the local WebSocket service
+      socket = new WebSocket('ws://localhost:8080'); // Connect the local WebSocket service
 
       socket.onopen = () => {
         console.log('WebSocket connected');

@@ -4,7 +4,7 @@ const wss = new WebSocket.Server({ port: 8080 });
 
 console.log('Mock sensor WebSocket server is running on ws://localhost:8080');
 
-// 生成一组随机的传感器数据
+// Generate a random set of sensor data
 function generateSensorData() {
   return {
     temperature: (30 + Math.random() * 12).toFixed(1), // 30°C - 42°C
@@ -16,21 +16,21 @@ function generateSensorData() {
     oxygenSaturation: Math.floor(80 + Math.random() * 21), // 80% - 100%
     respiratoryRate: Math.floor(8 + Math.random() * 18),  // 8 - 25 breaths/min
     bloodGlucose: (Math.floor(Math.random() * 71) + 20) / 10, // 2.0 ≤ x < 9.0 mg/dL
-    timestamp: new Date().toISOString(), // 发送一个时间戳（方便前端处理）
+    timestamp: new Date().toISOString(), // Send a timestamp (for frontend processing)
   };
 }
 
-// 每次有客户端连接
+// Everytime a client connects
 wss.on('connection', (ws) => {
   console.log('Client connected');
 
-  // 每3秒钟发送一次新的随机数据
+  // Send new random sensor data every 3sec
   const interval = setInterval(() => {
     const sensorData = generateSensorData();
-    ws.send(JSON.stringify(sensorData)); // 发送给前端
+    ws.send(JSON.stringify(sensorData)); // Send to frontend
   }, 3000);
 
-  // 客户端断开时，清除定时器
+  // Clear the timer when the client disconnects
   ws.on('close', () => {
     console.log('Client disconnected');
     clearInterval(interval);

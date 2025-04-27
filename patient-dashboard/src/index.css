@@ -32,6 +32,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  @apply min-h-screen bg-gradient-to-r from-blue-600 via-blue-400 to-blue-200;
 }
 
 h1 {
@@ -72,8 +73,8 @@ button:focus-visible {
 }
 
 .p-4 {
-  word-wrap: break-word;  /* 确保长文本能换行 */
-  word-break: break-word; /* 防止长单词不换行 */
+  word-wrap: break-word;  /* Make sure long text wraps */
+  word-break: break-word; /* Prevent long words from non-wrapping*/
   max-width: 100%;
 }
 
@@ -83,5 +84,5 @@ button:focus-visible {
 }
 
 .space-y-4 {
-  margin-bottom: 10px; /* 控制间隔大小 */
+  margin-bottom: 10px; /* Control the spacing */
 }

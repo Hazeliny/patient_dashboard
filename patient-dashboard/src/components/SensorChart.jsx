@@ -3,7 +3,7 @@ import { Bar } from 'react-chartjs-2'
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js'
 import annotationPlugin from 'chartjs-plugin-annotation'
 
-// 注册 Chart.js 插件
+// Register Chart.js plugin
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -40,8 +40,8 @@ export default function SensorChart({ data }) {
       },
       unit: 'mmHg',
       color: '#f87171',
-      min: { systolic: 90, diastolic: 60 }, // 血压的合理下限
-      max: { systolic: 140, diastolic: 90 },
+      min: { systolic: 90, diastolic: 60 }, // Reasonable lower limit of blood pressure
+      max: { systolic: 140, diastolic: 90 }, // Reasonable upper limit of blood pressure
     },
     {
       title: 'Oxygen Saturation (HbO₂/(HbO₂ + Hb)%)',
@@ -76,7 +76,7 @@ export default function SensorChart({ data }) {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-1 bg-white shadow rounded">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-1 bg-gray-100 shadow rounded">
       {cards.map((card, index) => {
         const isBloodPressure = card.title.includes('Blood Pressure')
 
@@ -92,7 +92,7 @@ export default function SensorChart({ data }) {
 
           return (
             <div key={index} className="p-4 border rounded shadow-sm relative">
-              {/* tile */}
+              {/* Tile */}
               <h4 className="text-lg font-semibold mb-0">{card.title}</h4>
 
               {/* Vertical legend in the upper right corner */}
@@ -102,7 +102,7 @@ export default function SensorChart({ data }) {
                   <span className="text-xs">Above Normal</span>
                 </div>
                 <div className="flex items-right space-x-1">
-                  <div className="w-3 h-2 bg-yellow-400 rounded-sm" />
+                  <div className="w-3 h-2 bg-yellow-300 rounded-sm" />
                   <span className="text-xs">Below Normal</span>
                 </div>
                 <div className="flex items-right space-x-1">
@@ -111,7 +111,7 @@ export default function SensorChart({ data }) {
                 </div>
               </div>
 
-              {/* two small bars */}
+              {/* Two small bloodPressure bars */}
               <div className="grid grid-cols-2.5 gap-0.5 mt-11">
                 {bloodPressureCharts.map((item, subIndex) => {
                   const chartData = {
@@ -175,9 +175,9 @@ export default function SensorChart({ data }) {
                     },
                     layout: {
                       padding: {
-                      top: 28, // 为图表区域顶部增加空隙
-                      bottom: 0, // 为图表区域底部增加空隙
-                      left: -6,
+                      top: 28, // Add space to the top of the chart area
+                      bottom: 0, // Add space to the bottom of the chart area
+                      left: -6, // Add space to the left of the chart area
                       },
                     },
                   }
@@ -185,7 +185,7 @@ export default function SensorChart({ data }) {
                   return (
                     <div key={subIndex} className="h-50 w-56" style={{ marginTop: '30px' }}>
                       <Bar data={chartData} options={options} />
-                      {/* 下面显示数值 */}
+                      {/* Values shown below */}
                       <div className="text-center mt-1 text-sm text-gray-600">
                         {item.value} {card.unit}
                       </div>
@@ -196,7 +196,7 @@ export default function SensorChart({ data }) {
             </div>
           )
         } else {
-          // 其他普通卡片
+          // Handle all the cards except for bloodPressure card
           const chartData = {
             labels: [card.title],
             datasets: [
@@ -258,8 +258,8 @@ export default function SensorChart({ data }) {
             },
             layout: {
               padding: {
-                top: 0, // 为图表区域顶部增加空隙
-                bottom: 0, // 为图表区域底部增加空隙
+                top: 0,
+                bottom: 0,
                 left: -6,
               },
             },
@@ -276,7 +276,7 @@ export default function SensorChart({ data }) {
                   <span className="text-xs">Above Normal</span>
                 </div>
                 <div className="flex items-right space-x-0.5">
-                  <div className="w-3 h-2 bg-yellow-400 rounded-sm" />
+                  <div className="w-3 h-2 bg-yellow-300 rounded-sm" />
                   <span className="text-xs">Below Normal</span>
                 </div>
                 <div className="flex items-right space-x-0.5">
@@ -289,7 +289,7 @@ export default function SensorChart({ data }) {
                 <Bar data={chartData} options={options} />
               </div>
 
-              {/* 显示数值 */}
+              {/* Data shown below */}
               <div className="text-center mt-3 text-sm text-gray-600">
                 {card.value} {card.unit}
               </div>
