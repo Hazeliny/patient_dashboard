@@ -1,8 +1,9 @@
+const port = process.env.PORT || 8080;
+const server = require('http').createServer();
 const WebSocket = require('ws');
 
-const wss = new WebSocket.Server({ port: 8080 });
-
-console.log('Mock sensor WebSocket server is running on ws://localhost:8080');
+//const wss = new WebSocket.Server({ port: 8080 });
+const wss = new WebSocket.Server({ server });
 
 // Generate a random set of sensor data
 function generateSensorData() {
@@ -35,4 +36,8 @@ wss.on('connection', (ws) => {
     console.log('Client disconnected');
     clearInterval(interval);
   });
+});
+
+server.listen(port, () => {
+    console.log(`Mock sensor WebSocket server is running on port ${port}`);
 });
