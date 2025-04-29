@@ -1,4 +1,4 @@
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8080; //In orde to be adapted to Azure
 const server = require('http').createServer();
 const WebSocket = require('ws');
 
