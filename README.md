@@ -4,7 +4,7 @@ This project is a web application designed to display patient details and visual
 
 The demo is presented as follows:
 
-![PATIENTDASHBOARD](https://github.com/Hazeliny/lin_prueba_sc/blob/main/patient-dashboard/src/assets/Patient_Dashbord.gif)
+![PATIENTDASHBOARD](https://github.com/Hazeliny/lin_prueba_sc/blob/main/patient-dashboard/src/assets/Patient_Dashboard.gif)
 
 ## Install and Execute
 
