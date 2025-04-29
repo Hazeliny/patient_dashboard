@@ -28,8 +28,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
   @apply min-h-screen bg-gradient-to-r from-blue-600 via-blue-400 to-blue-200;

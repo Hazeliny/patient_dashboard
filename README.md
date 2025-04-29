@@ -6,7 +6,6 @@ The demo is presented as follows:
 
 ![PATIENTDASHBOARD](https://github.com/Hazeliny/lin_prueba_sc/blob/main/patient-dashboard/src/assets/Patient_Dashbord.gif)
 
-
 ## Install and Execute
 
 1. Git clone the code
