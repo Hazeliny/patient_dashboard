@@ -11,9 +11,9 @@ The demo is presented as follows:
 
 1. Git clone the code
 
-'''
+```
 git clone https://github.com/Hazeliny/lin_prueba_sc projectName
-'''
+```
 
 2. Install Node.js+React+Vite
 
@@ -23,34 +23,34 @@ There is no need to install React and Vite separately, as the package.json file 
 
 The following command is used to initialize a new frontend project:
 
-'''
+```
 npm create vite@latest projectName -- --template react
-'''
+```
 
 3. Install dependencies
 
-'''
+```
 cd projectName
 npm install
-'''
+```
 
 4. Run both frontend and backend
 
-'''
+```
 cd mock-sensor-server
 node mock-sensor-server.js
 
 cd patient-dashboard
 npm run dev
-'''
+```
 
 5. Open browser
 
 This application runs at default port 5173. 
 
-'''
+```
 http://localhost:5173
-'''
+```
 
 ## Technology stack
 
