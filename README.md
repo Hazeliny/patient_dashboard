@@ -139,3 +139,17 @@ http://localhost:5173
 - Deploying frontend and backend to Azure.
 
 - Designing modern and interactive data visualization charts.
+
+
+## Future Improvements and Technical Reflections
+
+This project serves as a foundation for a static/real-time health monitoring dashboard. Looking forward, several meaningful enhancements can be made:
+
+- **CI/CD Optimization**: Integrate full GitHub Actions workflows for backend as well, including automated testing and deployment to Azure App Service with rollback strategies.
+- **AI Integration**: Incorporate AI-based anomaly detection on sensor data to alert healthcare providers when unusual patterns are detected (e.g., abnormal heart rate or blood oxygen).
+- **Real Production Data**: Replace the mock WebSocket server with real sensor APIs or a secure data ingestion pipeline (e.g., using Azure IoT Hub or Event Hubs).
+- **Scalability**: Containerize backend with Docker and deploy to Azure Kubernetes Service (AKS) for better scalability and microservice architecture potential.
+- **Security Enhancements**: Add authentication (e.g., Azure AD B2C) and rate-limiting on WebSocket endpoints to prevent abuse in production.
+- **Offline Mode**: Add service worker support for offline-first capabilities, especially useful in medical field operations with intermittent connectivity.
+
+These ideas aim to make the solution more robust, intelligent, and enterprise-ready.
