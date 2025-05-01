@@ -33,7 +33,7 @@ export default function PatientPage() {
           .catch(err => console.error('Failed to get static sensors data:', err))
     } else if (dataSource === 'realtime') {
 //      socket = new WebSocket('ws://localhost:8080'); // Connect the local WebSocket service
-      socket = new WebSocket(import.meta.env.VITE_SOCKET_URL); // In order to be deployed to Azure
+      socket = new WebSocket(import.meta.env.VITE_SOCKET_URL); // In order to be deployed to Azure // patientId can be added like: `${import.meta.env.VITE_SOCKET_URL}?patientId=${id}` 
 
       socket.onopen = () => {
         console.log('WebSocket connected');
@@ -53,7 +53,7 @@ export default function PatientPage() {
     return () => {
         if (socket) { socket.close();};
     };
-  }, [dataSource]);
+  }, [dataSource]); // Here dependency array can be written to support multi-patient: [dataSource, id] to match socket with patientId
 
   if (!patient || !sensorData) return (
     <div className="text-center text-gray-600 mt-20">
